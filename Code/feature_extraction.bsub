@@ -1,0 +1,26 @@
+#!/bin/bash
+#BSUB -J feat_extraction[1]         		   # Job array name and job indexes
+#BSUB -n 1                          		   # Number of tasks
+#BSUB -R "span[hosts=1]"            		   # Allocate all tasks in 1 host
+#BSUB -q short                      		   # Select queue
+#BSUB -o output-featExtraction-%J.out              # Output file
+#BSUB -e output-featExtraction-%J.err              # Error file
+
+# Run here appropriate module load statements for your cluster environment
+# module load ...
+
+# Parameters
+project_path=/path/to/experiment/folder
+beam_names=(beam1 beam2 beam2)
+
+# Indicate which file to process
+# Note: Manual now -> Switch to LSF array
+idx=$LSB_JOBINDEX-1
+
+# Set command-line arguments
+project_path=$project_path
+
+# Call the Python script
+python feature_extraction.py \
+        --project_path $project_path\
+	--beam_names ${beam_names[*]} 
