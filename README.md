@@ -101,16 +101,17 @@ Then, you will need to generate a .csv file that includes specific columns to ca
 
 The metadata file required for the analysis must include the following essential columns:
 
-| Animal_ID | Group_name | Sex | Age | Weight |
-|-----------|----------- |-----|-----|--------|
-| 38458348  | WT         | F   | 8   | 28.9   |
-| 39573247  | KO         | M   | 8   | 36.6   |
+| Animal_ID | Group_name | Sex | Age | Weight | File_pattern|
+|-----------|----------- |-----|-----|--------|-------------|
+| 38458348  | WT         | F   | 8   | 28.9   |20042024_38458348|
+| 39573247  | KO         | M   | 8   | 36.6   |21042024_39573247|
 
 >**Animal_ID**: This is a unique numerical identifier for each animal.  
 >**Group_name**: Represents the label assigned to various experimental groups within your study. This label will be used to reference >your experimental conditions throughout the analysis process.    
 >**Sex**: Indicates the sex of the animal, with 'F' representing female and 'M' representing male.    
 >**Age**: Expressed as a number, which in this context denotes the age of the animal in weeks (e.g., 8 weeks).
 >**Weight**: The weight is typically given in grams, although the specific unit of measurement is flexible.
+>**File_pattern**: Date of the experiment + animal ID reported in the video file name.
 
 
 ### 4.3 Set up the conda environment
